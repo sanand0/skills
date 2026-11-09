@@ -1,0 +1,6 @@
+{
+  "name": "anand-skills",
+  "description": "Anand's reasoning, writing, coding, and data skills",
+  "author": {"name": "Anand Subramanian"},
+  "skills": ["./"]
+}

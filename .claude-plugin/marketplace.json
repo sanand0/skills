@@ -1,0 +1,8 @@
+{
+  "name": "anand-skills",
+  "description": "Anand's reasoning, writing, coding, and data skills",
+  "owner": {"name": "Anand Subramanian"},
+  "plugins": [
+    {"name": "anand-skills", "source": "./"}
+  ]
+}
