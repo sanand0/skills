@@ -5,26 +5,26 @@ description: Locate and use Anand's files, projects, notes, archives and agent h
 
 # Machines
 
-- **Prefer graphene** (Linux) when it's online. It's the primary machine, and its scheduled jobs keep the snapshots and the context index fresh.
-- **Use Plutonium** (Windows) when graphene is offline, e.g. while Anand travels.
-  - It has the same `~/...` layout, but its `~/Documents` and `~/r2` may be missing or older.
-  - Name the sources you couldn't reach. Unreachable is not the same as absent.
-- Prefer **LocalMCP2** - which reaches only the graphene folders it was started with. Its `~` is `/home/vscode`, aliased to `/home/sanand`. A missing path there may just be unmounted.
-- **Remote Desktop Commander** reaches both machines, so pick the device explicitly.
+- **Use local machine** if already on graphene or Plutonium.
+- **Else use LocalMCP2**. Runs on graphene container. `~` = `/home/vscode` = `/home/sanand`. Mounts SOME folders (partly read-only). Missing paths may just be unmounted.
+- **Else use Remote Desktop Commander - graphene** (Linux - bash) when LocalMCP2 access is not sufficient and the operation is safe.
+- **Else use Remote Desktop Commander - Plutonium** (Windows - PowerShell 5.1) when LocalMCP2 & graphene are offline, e.g. while Anand travels.
+  - It has the same `~/...` layout, but its `~/Documents` and `~/r2` may be older.
+- Name the sources you couldn't reach. Unreachable is not the same as absent.
 - **Paths:**
-  - When passing a path to a program, write `"$HOME/..."`. That works in bash and in PowerShell; Windows PowerShell 5.1 doesn't expand `~` for programs.
-  - Desktop Commander's file tools accept `~/...` on both machines.
-  - On Plutonium, avoid Cygwin bash: Windows programs can't open its `/home/...` paths.
+  - Prefer `"$HOME/..."` over `~` which works on bash AND PowerShell. Desktop Commander's file tools accept `~/...` on both machines.
+  - Windows programs can't open Cygwin `/home/...` paths; pass native Windows paths.
 - **Sync:**
-  - `~/Dropbox` syncs live. On Plutonium only `C:\Dropbox` is live, so ignore dated or backup copies.
-  - `~/code` holds separate git checkouts on each machine. Check branch and status; push from one machine and fetch on the other.
-  - `~/Documents`, `~/r2`, agent sessions and browser state are per machine.
+  - `~/Dropbox` syncs live.
+  - `~/code` holds independent git checkouts. Check branch and status; push and fetch.
+  - `~/Documents` is copied ~hourly from graphene to `C:\Documents` by `~/code/scripts/services/sync-plutonium.sh` (updates, no deletions).
+  - Graphene's agent history is copied to `C:\graphene`; Plutonium's native agent sessions, browser state and `~/r2` remain separate.
 
 # Starting points
 
-Read `~/code/skills/AGENTS.md` for coding, shell, or filesystem-modification tasks: it sets tool preferences and working rules, and remote sessions don't load it.
-
-- **Unclear or cross-source:** `uv run "$HOME/code/scripts/context.py" search '…'`, if `~/Documents/data/context/` exists.
+- `~/code/skills/README.md`: skill index.
+- `~/code/skills/AGENTS.md`: for coding, shell, or filesystem-modification tasks.
+- **Unclear or cross-source:** `uv run "$HOME/code/scripts/context.py" search '…'`, if `~/Documents/data/context/context.sqlite` exists.
   - Other subcommands: `entity`, `recent`, `open-loops`, `thread`, `style`, `assets`.
   - Hits are candidates, so deep-read the `~/...` locator.
   - `status` shows each source's latest item. The index can be fresh while a source is weeks old.
@@ -38,18 +38,18 @@ Read `~/code/skills/AGENTS.md` for coding, shell, or filesystem-modification tas
   - `~/code/til/README.md`
 - **Notes, people, meetings, tasks:** `~/Dropbox/notes/`, especially `about/<person>.md`, `transcripts/` (date-named), `weekly-tasks.md` and `daily-*.md`.
 - **Mail, chat, calendar, Drive:**
-  - Live: `gws`. The default account is s.anand@straive.com.
+  - Live: `gws`. The default account is s.anand@straive.com (`~/.config/gws`).
   - For root.node@gmail.com or anand@study.iitm.ac.in, set `GOOGLE_WORKSPACE_CLI_CONFIG_DIR` to `~/.config/gws-<account>`.
   - Confirm the account before any write. Setup: `~/Dropbox/notes/gws-cli.md`.
   - History: `~/Documents/data/<account>/` covers mail, chat and calendar. For Drive, use `gws`.
   - Older mail: `~/Documents/Mail/` (its README explains the index).
-- **WhatsApp, browsing, LinkedIn:** `~/Documents/data/README.md` lists each archive and the script that builds it.
+- **WhatsApp, browsing, LinkedIn:** `~/Documents/data/` for archives; `~/code/scripts/README.md` for current builders/query CLIs.
 - **ChatGPT and Claude conversations:** `~/Documents/chatgpt/`, `~/Documents/claude/`.
-- **Coding-agent sessions:** `uv run "$HOME/code/scripts/agentlog.py" {codex,claude,copilot}`, on each machine.
+- **Coding-agent sessions:** `uv run "$HOME/code/scripts/agentlog.py" codex ls --limit 20` (or `claude` / `copilot`), on each machine.
+  - On Plutonium, use `codex ls --root C:/graphene/.codex --limit 20` for graphene's copied history (similarly `claude` / `.claude` and `copilot` / `.copilot`).
 - **Daily activity:** `~/Documents/activities/`.
 - **Large files, media:** `~/r2/{files,media,private}/`.
 - **Setup, personal CLIs:** `~/code/scripts/README.md`, `~/code/scripts/setup/{linux,windows}.md`, `~/Dropbox/scripts/`.
-- **Browser control (graphene):** the `devtools` skill.
 
 # Workflows
 
@@ -57,12 +57,3 @@ Read `~/code/skills/AGENTS.md` for coding, shell, or filesystem-modification tas
   - Convert video to speech-quality Opus using the `opus` function in `~/code/scripts/setup.fish`. Save in `~/Documents/calls/` as `YYYY-MM-DD Meeting Title.opus`.
   - Transcribe via `~/code/scripts/call` into `~/Dropbox/notes/transcripts/*.md`. If speaker-labeled captions exist (e.g. embedded subtitles), use `## Meeting transcript context` in `~/code/blog/pages/prompts/fragments.md` to generate speaker context for `call --prompt` - along with attendee names, meeting notes, ...
   - Reuse existing files. Verify completion.
-
-# Answering
-
-Label each source as one of:
-
-- **live** (`gws`)
-- **snapshot**, with its date
-- **index hit**, not yet deep-read
-- **inference**
