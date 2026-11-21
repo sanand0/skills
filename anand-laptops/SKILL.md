@@ -1,6 +1,6 @@
 ---
 name: anand-laptops
-description: Locate and use Anand's files, projects, notes, archives and agent history on his laptops - graphene (Linux) and Plutonium (Windows, usually online) - which share one ~/ layout. Use before reading or searching his files via LocalMCP2, Remote Desktop Commander or a local shell.
+description: Maps Anand's files on his laptops graphene and Plutonium - with similar ~/ layout. Read before using LocalMCP2, Remote Desktop Commander.
 ---
 
 # Machines
@@ -45,8 +45,8 @@ description: Locate and use Anand's files, projects, notes, archives and agent h
   - Older mail: `~/Documents/Mail/` (its README explains the index).
 - **WhatsApp, browsing, LinkedIn:** `~/Documents/data/` for archives; `~/code/scripts/README.md` for current builders/query CLIs.
 - **ChatGPT and Claude conversations:** `~/Documents/chatgpt/`, `~/Documents/claude/`.
-- **Coding-agent sessions:** `uv run "$HOME/code/scripts/agentlog.py" codex ls --limit 20` (or `claude` / `copilot`), on each machine.
-  - On Plutonium, use `codex ls --root C:/graphene/.codex --limit 20` for graphene's copied history (similarly `claude` / `.claude` and `copilot` / `.copilot`).
+- **Coding-agent sessions:** `agentlog.py codex ls --limit 20` (or `claude` / `copilot`), on each machine, from $HOME/code/scripts/.
+  - On Plutonium, use `agentlog.py codex ls --root C:/graphene/.codex --limit 20` for graphene's copied history (similarly `claude` / `.claude` and `copilot` / `.copilot`).
 - **Daily activity:** `~/Documents/activities/`.
 - **Large files, media:** `~/r2/{files,media,private}/`.
 - **Setup, personal CLIs:** `~/code/scripts/README.md`, `~/code/scripts/setup/{linux,windows}.md`, `~/Dropbox/scripts/`.

@@ -56,7 +56,7 @@ Source: [sync-plutonium.sh](../../scripts/services/sync-plutonium.sh), source va
 
 🟢 DONE 11 Nov 2026. Restarted.
 
-**Confirmed mismatch; cause not fully isolated.** This session's LocalMCP2 Bash tool description advertises `~/code/scripts/agents/*/SKILL.md` and `~/code/blog/pages/skills/*/SKILL.md`. Current `mcpserver.py::MOUNTED_PATHS` uses `~/code/skills/*/SKILL.md`; the old locations were consolidated on 9 November. The latest recorded server startup was **9 November 04:55:28 UTC**. A live `file_info` call successfully reached the new laptop skill, so stale advertising does not establish that the actual mount is missing.
+**Confirmed mismatch; cause not fully isolated.** This session's LocalMCP2 Bash tool description advertises `~/code/scripts/agents/*/SKILL.md` and `~/code/skills/*/SKILL.md`. Current `mcpserver.py::MOUNTED_PATHS` uses `~/code/skills/*/SKILL.md`; the old locations were consolidated on 9 November. The latest recorded server startup was **9 November 04:55:28 UTC**. A live `file_info` call successfully reached the new laptop skill, so stale advertising does not establish that the actual mount is missing.
 
 **Review:** restart through the normal `mcpserver` wrapper if its running code is old, refresh LocalMCP2 tool discovery in ChatGPT, and check the advertised paths plus a real read in a new conversation. Distinguish old process code from cached plugin schemas before changing mount configuration. See [setup/localmcp.md](../../scripts/setup/localmcp.md). No server or connector restart was performed during this audit.
 

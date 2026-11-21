@@ -3,7 +3,7 @@
 Choose skills by their descriptions; read `./{name}/SKILL.md` when relevant.
 
 - agent-friendly-cli: Use when writing command-line scripts agents will control
-- anand-laptops: Locate and use Anand's files, projects, notes, archives and agent history on his laptops - graphene (Linux) and Plutonium (Windows, usually online) - which share one ~/ layout. Use before reading or searching his files via LocalMCP2, Remote Desktop Commander or a local shell.
+- anand-laptops: Maps Anand's files on his laptops graphene and Plutonium - with similar ~/ layout. Read before using LocalMCP2, Remote Desktop Commander.
 - anand-objectives: Apply to any substantive answer for Anand - strategy, design, build, analysis, teaching, writing, research - to steer it toward his goals (compounding assets, durable skills, the surprising read). Skip for trivial lookups, mechanical edits, focused tasks. Shapes HOW to answer, never overrides WHAT was asked.
 - anand-writing-style: To write in Anand's style for blog posts, emails, talk summaries, interview questions, conversations, ...
 - blind-spot: Use when value may hide in what's NOT said, asked, measured, tested, shown, or decided - or in what a filter removed: strategy, advisory/sales calls, reviews, data analysis, design, demos, AI outputs, decisions, picks from many (bids, hires, variants), transcript post-mortems. Skip for lookups, mechanical edits, tightly scoped execution.
@@ -23,6 +23,7 @@ Choose skills by their descriptions; read `./{name}/SKILL.md` when relevant.
 - interactive-storytelling: Use interactivity purposefully in data visualizations and narrative content. Trigger for scrollytelling, explorable explanations, simulations, guess-then-reveal patterns, or any data story where user action shapes understanding. NOT for dashboard drill-downs or generic UI interactivity.
 - interface-cheat-sheet: A list of tips, improvements and best practices that quickly make your interfaces better.
 - llm: For niche models (e.g. OpenRouter) and API keys
+- meeting-prep: Prepare me for a meeting, interview or day's calendar. Use when I ask what to learn, ask, show or say in a meeting, when I share live captions, or when I ask how a meeting compared with the prep.
 - meeting-response-style: Summarize into something I can just read out in a meeting: Minto pyramid structure, answer-first, bolded for scanning, conversational.
 - memorable-explanations: Use to intuitively, memorably explain abstract, complex, unfamiliar concepts. NOT for code generation, data retrieval, or when user just needs execution.
 - mental-models: Apply relevant mental models for strategy, forecasts, recommendations, or advice. Skip for execution, lookups, and mechanical edits.
