@@ -36,18 +36,8 @@ Use icon libraries. Use SVG favicons e.g.
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns ... %3C%2Fsvg%3E"/>
 ```
 
-Build interactions with the platform, not JS. Syntax/fallbacks: `npx -y modern-web-guidance@latest retrieve <id>`.
+Prefer native platform behavior. Before choosing how to build or fix a tooltip, preview, dialog, or animation, run `npx -y modern-web-guidance@latest search "<behavior>"`. Run `npx -y modern-web-guidance@latest retrieve <id>` for the best match by description. If the CLI is unavailable, use the [online guide index](https://developer.chrome.com/docs/modern-web-guidance/guides).
 
-- Tooltip: `popover="hint"` + `interestfor` + `position-area`, `position-try-fallbacks: flip-block` → interest-triggered-tooltips, position-aware-tooltips
-- Hover preview (citation, file link): `interestfor` → `popover` card → hovercard
-- Drill-down popup: `<dialog closedby="any">` via `commandfor`/`command="show-modal"`; `@starting-style` + `allow-discrete` → dialog, animate-to-from-top-layer
-- State change (filter, sort, tab, expand small multiple): `document.startViewTransition(render)`; `view-transition-name: match-element` → same-document-transitions, group-element-transitions
-- Scroll-linked visuals: `animation-timeline: view()|scroll()`; play-once via `timeline-trigger`; JS only to swap chart data per step → scrollytelling, scroll-entry-exit-effects
-- Expand/collapse: `<details name>` + `::details-content` + `interpolate-size: allow-keywords` → animate-to-intrinsic-sizes
-- Sticky header stuck / scroll-edge shade: `@container scroll-state(...)` → state-aware-sticky-headers, scrollability-affordance-hints
-- Stagger: `animation-delay: calc(sibling-index() * 40ms)`
-- Text on coloured cells: `color: contrast-color(var(--bg))`
-- Dark mode: one token set with `light-dark()`; the toggle sets `color-scheme`
+Example searches: `prevent tooltip viewport clipping`, `preview link on hover`, `light dismiss modal dialog`, `animate same page view transitions`, `scroll entry exit effects`.
 
-Chromium-only bits (interestfor, timeline-trigger, scroll-state, interpolate-size) are enhancements; the fallback is the plain, unanimated state.
-JS that positions, shows/hides, dismisses, traps focus or animates on scroll needs a one-line comment saying why the native route fails.
+Keep essential interactions usable by keyboard and touch on the project's supported browsers. Treat motion as an enhancement and respect reduced-motion preferences. If custom JS handles placement, dismissal, focus, or scroll animation, comment why the native pattern doesn't fit.
