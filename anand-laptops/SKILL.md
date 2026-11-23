@@ -40,7 +40,6 @@ description: Maps Anand's files on his laptops graphene and Plutonium - with sim
 - **Mail, chat, calendar, Drive:**
   - Live: `gws`. The default account is s.anand@straive.com (`~/.config/gws`).
   - For root.node@gmail.com or anand@study.iitm.ac.in, set `GOOGLE_WORKSPACE_CLI_CONFIG_DIR` to `~/.config/gws-<account>`.
-  - Confirm the account before any write. Setup: `~/Dropbox/notes/gws-cli.md`.
   - History: `~/Documents/data/<account>/` covers mail, chat and calendar. For Drive, use `gws`.
   - Older mail: `~/Documents/Mail/` (its README explains the index).
 - **WhatsApp, browsing, LinkedIn:** `~/Documents/data/` for archives; `~/code/scripts/README.md` for current builders/query CLIs.
@@ -50,6 +49,8 @@ description: Maps Anand's files on his laptops graphene and Plutonium - with sim
 - **Daily activity:** `~/Documents/activities/`.
 - **Large files, media:** `~/r2/{files,media,private}/`.
 - **Setup, personal CLIs:** `~/code/scripts/README.md`, `~/code/scripts/setup/{linux,windows}.md`, `~/Dropbox/scripts/`.
+- **Laptop infra:** ``~/code/infra/` (graphene crashes, disk space, network, etc.)
+- **Experiments & research:** `~/code/{research,private-research}/`
 
 # Workflows
 
