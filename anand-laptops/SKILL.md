@@ -10,6 +10,7 @@ description: Maps Anand's files on his laptops graphene and Plutonium - with sim
 - **Else use Remote Desktop Commander - graphene** (Linux - bash) when LocalMCP2 access is not sufficient and the operation is safe.
 - **Else use Remote Desktop Commander - Plutonium** (Windows - PowerShell 5.1) when LocalMCP2 & graphene are offline, e.g. while Anand travels.
   - It has the same `~/...` layout, but its `~/Documents` and `~/r2` may be older.
+  - Use `wsl -d Ubuntu` and a checkout inside WSL for Cloudflare deploys or to reproduce graphene's Linux environment.
 - Name the sources you couldn't reach. Unreachable is not the same as absent.
 - **Paths:**
   - Prefer `"$HOME/..."` over `~` which works on bash AND PowerShell. Desktop Commander's file tools accept `~/...` on both machines.
