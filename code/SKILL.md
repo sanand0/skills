@@ -13,6 +13,10 @@ description: ALWAYS follow this style when writing Python / JavaScript / HTML / 
   6. Use existing library
   7. Use popular, modern, minimal, fast library
   8. Write the minimum code that works
+- Unfamiliar, non-trivial feature (protocol, format, algorithm, integration)?
+  Learn (don't install/run) from 2-4 admired, maintained modern implementations: README, core file, top issues.
+  In ≤5 lines say: library to adopt, design to borrow, or pitfalls to avoid. Then pick the smallest.
+  Skip for familiar or <50-line work.
 - Prefer deletion over addition, boring over clever, 1 file over many. Minimize abstractions, scaffolding, or dependencies
 - Prefer data over code: structures beat conditionals. Prefer config.{json|yaml|toml|...} if >= 30 lines
 - DRY: Use helpers for logic repeated 3+ times, precompute shared intermediates
