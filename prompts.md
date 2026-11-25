@@ -1,5 +1,23 @@
 # Prompts
 
+## Codex skills setup, 25 Nov 2026
+
+<!--
+cd ~/code/skills
+codex --model gpt-6.2-sol --config model_reasoning_effort=medium
+-->
+
+When I run codex in any directory, I think it picks up skills from this directory - `~/code/skills/` - under the [anand-skills] group.
+Is that right? How does it do it - I mean what config enables that? Or is it something done via ChatGPT.com?
+
+---
+
+My ChatGPT Plus account (open on the browser, CDP localhost:9222, use devtools skill, prefer background operations than bringing into focus) allows plugins to be uploaded via https://chatgpt.com/plugins.
+But I can't find a way to keep a live GitHub repo as a plugin. Is there one? If so, add https://github.com/sanand0/skills/.
+Else, if only upload is supported, create a `just zip` option that bundles what's required and lets me upload it. Upload it and test it.
+
+<!-- codex resume 01a21040-78de-75e1-9929-4f1a129b54ab -->
+
 ## Improve anand-laptop, 10 Nov 2026
 
 <!--

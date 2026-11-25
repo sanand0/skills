@@ -29,6 +29,7 @@ description: ALWAYS follow this style when writing Python / JavaScript / HTML / 
 
 Docs:
 
+- I save my prompts, e.g. in `prompts.md`. Commit these, too.
 - Use type hints and docstrings (document contracts and surprises, not mechanics)
 - Comment non-obvious stuff that'll trip future maintainers: why, why not alternatives, pitfalls, invariants, input/output shape, ...
 - Mark deliberate shortcuts with a known limit: `shortcut: <limit>; <upgrade path>` (e.g. `# shortcut: O(n²) scan; index by id past ~10k rows`)

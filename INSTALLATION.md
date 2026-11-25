@@ -6,14 +6,16 @@ If `~/.agents/skills` already exists as a real directory, inspect and move it as
 
 ```sh
 gh repo clone sanand0/skills ~/code/skills
-cd ~/code/skills && just install-hooks  # regenerate README on every commit
-mkdir -p ~/.agents ~/.claude ~/.codex ~/.copilot
+cd ~/code/skills && just build  # regenerate README on every commit
+mkdir -p ~/.agents ~/.claude ~/.codex ~/.copilot ~/.gemini/config
 # Update skills paths
 ln -sfn ~/code/skills ~/.agents/skills  # Codex, Pi, Copilot, OpenCode
 ln -sfn ~/code/skills ~/.claude/skills  # Claude Code
+ln -sfn ~/code/skills ~/.gemini/config/skills  # Antigravity
 # Replace `AGENTS.md` - global coding-agent rules.
 ln -sfn ~/code/skills/AGENTS.md ~/.codex/AGENTS.md
 ln -sfn ~/code/skills/AGENTS.md ~/.copilot/copilot-instructions.md
+ln -sfn ~/code/skills/AGENTS.md ~/.gemini/config/AGENTS.md
 # Tell Claude to use AGENTS.md
 printf "@$HOME/code/skills/AGENTS.md\n@AGENTS.md\n" >> ~/.claude/CLAUDE.md
 # Tell OpenCode to use AGENTS.md
@@ -26,6 +28,11 @@ Add `sanand0/skills` under **Customize → Plugins → Add marketplace**, enable
 The `.claude-plugin/` manifests make every skill available without manually maintaining a plugin list.
 
 ### ChatGPT online
+
+Run `just zip` to build `anand-skills.zip` from the checkout's tracked skill files.
+Open **Plugins → Add → Upload plugin archive** on ChatGPT.com to upload it.
+For an existing plugin, run `just new-version zip` to increment the minor version
+and rebuild the ZIP, then use **Upload new version** on the plugin's page.
 
 In Custom Instructions, keep a short list of high-priority skill names and triggers.
 Fetch the full skill on demand from `https://github.com/sanand0/skills/blob/main/{name}/SKILL.md` using the GitHub connector (or web); inspect the repository for additional skills when useful. Changes to skill bodies require no Custom Instructions update.
