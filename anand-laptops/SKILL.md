@@ -1,6 +1,6 @@
 ---
 name: anand-laptops
-description: Maps Anand's files on his laptops graphene and Plutonium - with similar ~/ layout. Read before using LocalMCP2, Remote Desktop Commander.
+description: Maps Anand's files and tools on graphene and Plutonium. Read before using LocalMCP2 or Remote Desktop Commander.
 ---
 
 # Machines
@@ -44,6 +44,7 @@ description: Maps Anand's files on his laptops graphene and Plutonium - with sim
   - History: `~/Documents/data/<account>/` covers mail, chat and calendar. For Drive, use `gws`.
   - Older mail: `~/Documents/Mail/` (its README explains the index).
 - **WhatsApp, browsing, LinkedIn:** `~/Documents/data/` for archives; `~/code/scripts/README.md` for current builders/query CLIs.
+- **Twitter/X posts:** `uvx --from twitter-cli twitter -c tweet '<URL or ID>' --json`. On Plutonium: `source ~/.twitter-auth` and `export PYTHONUTF8=1` first.
 - **ChatGPT and Claude conversations:** `~/Documents/chatgpt/`, `~/Documents/claude/`.
 - **Coding-agent sessions:** `agentlog.py codex ls --limit 20` (or `claude` / `copilot`), on each machine, from $HOME/code/scripts/.
   - On Plutonium, use `agentlog.py codex ls --root C:/graphene/.codex --limit 20` for graphene's copied history (similarly `claude` / `.claude` and `copilot` / `.copilot`).

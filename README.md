@@ -3,7 +3,7 @@
 Choose skills by their descriptions; read `./{name}/SKILL.md` when relevant.
 
 - agent-friendly-cli: Use when writing command-line scripts agents will control
-- anand-laptops: Maps Anand's files on his laptops graphene and Plutonium - with similar ~/ layout. Read before using LocalMCP2, Remote Desktop Commander.
+- anand-laptops: Maps Anand's files and tools on graphene and Plutonium. Read before using LocalMCP2 or Remote Desktop Commander.
 - anand-objectives: Apply to any substantive answer for Anand - strategy, design, build, analysis, teaching, writing, research - to steer it toward his goals (compounding assets, durable skills, the surprising read). Skip for trivial lookups, mechanical edits, focused tasks. Shapes HOW to answer, never overrides WHAT was asked.
 - anand-writing-style: To write in Anand's style for blog posts, emails, talk summaries, interview questions, conversations, ...
 - blind-spot: Use when value may hide in what's NOT said, asked, measured, tested, shown, or decided - or in what a filter removed: strategy, advisory/sales calls, reviews, data analysis, design, demos, AI outputs, decisions, picks from many (bids, hires, variants), transcript post-mortems. Skip for lookups, mechanical edits, tightly scoped execution.
